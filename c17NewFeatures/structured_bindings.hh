@@ -8,7 +8,7 @@ struct CacheLine
     unsigned when_ready;
 };
 
-struct CacheLineRetInfo
+struct CacheLineInfoQuery
 {
     bool found;
     unsigned addr;
@@ -37,7 +37,7 @@ class Cache
         if (auto iter = cache.find(addr);
                  iter != cache.end())
         {
-            return CacheLineRetInfo
+            return CacheLineInfoQuery
                    {true,
                     addr,
                     iter->second.missing_reason,
@@ -46,7 +46,7 @@ class Cache
         }
         else
         {
-            return CacheLineRetInfo{false,addr};
+            return CacheLineInfoQuery{false,addr};
         }
     }
 };
