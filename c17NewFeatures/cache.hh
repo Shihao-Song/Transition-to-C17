@@ -86,4 +86,7 @@ class Cache : public ClockedObject
 
     unsigned tick_next_level;
 };
+
+typedef Cache<OnChipToOffChip> LLC;
+
 #endif
