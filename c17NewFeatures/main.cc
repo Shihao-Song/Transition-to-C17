@@ -1,11 +1,9 @@
-#include <iostream>
-
-#include "structured_bindings.hh"
+#include "cache.hh"
 
 int main()
 {
     // Structured bindings can help with the cache-line information extraction
-    Cache cache;
+    Cache<OnChipToOffChip> cache;
 
     const auto [found,addr,missing_reason,core_id,when_ready] = cache.getCacheLine(0);
 
@@ -20,4 +18,7 @@ int main()
     {
         std::cout << "Block " << addr << " not found.\n";
     }
+    std::cout << "\n";
+
+    // constexpr-if can help with optimize deferred_set, cache as well
 }
