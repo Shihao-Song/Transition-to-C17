@@ -83,10 +83,12 @@ class Cache : public ClockedObject
             return CacheLineInfoQuery{false,addr};
         }
     }
+    void callme() {std::cout << tick_next_level << "\n";}
 
     unsigned tick_next_level;
 };
 
-typedef Cache<OnChipToOffChip> LLC;
+typedef Cache<OnChipToOffChip> LLC; // Last-level cache
+typedef Cache<OnChipToOnChip> NLC; // Non last-level cache
 
 #endif
