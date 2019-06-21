@@ -26,6 +26,7 @@ int main()
     }
     std::cout << "\n";
 
+    // **************************************************
     // Play with lambda
     std::cout << "1 + 1 = "
               << [](auto i, auto j){ return i + j; }(1,1)
@@ -75,6 +76,26 @@ int main()
     std::cout << test(2,2) << "\n";
 
     /*
-     * (4)
+     * (4) Filter design with lambdas
      * */
+    std::cout << "\n";
+    auto begin_with_a([](const std::string &str){return str.find("a") == 0;});
+    auto end_with_b([](const std::string &str){return str.find("b") == str.length() - 1;});
+    auto logi_ands([](auto ... x){return (x & ...);}); // fold expression
+    auto f(filter(logi_ands,begin_with_a,end_with_b));
+    std::cout << "Does \"acb\" begin with a and end with b? " << f("acb") << "\n";
+
+    /*
+     * (5) pack expansion (A programming trick)
+     * Hints: comma operator
+     * */
+    std::cout << "\n";
+    // auto f1([](){std::cout << "f1 was evaluated.\n";});
+    // auto f2([](){return 4;});
+    // int haha = (f1(), f2()); // f1 is evaluated, but f2 is assigned.
+    // std::cout << "My assigned value: " << haha << "\n";
+    auto f1([](int n){std::cout << "Original value is: " << n << "\n";});
+    auto f2([](int n){std::cout << "Plus one is: " << n + 1 << "\n";});
+    auto calls(multicalls(f1,f2));
+    forEach(calls, 1, 2, 3, 4);
 }

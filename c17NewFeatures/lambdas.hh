@@ -1,8 +1,10 @@
 #ifndef __LD_HH__
 #define __LD_HH__
 
+#include <string>
+
 /*
- * The following coding tasks should be enough for me to understand or apply
+ * The following coding tasks should be enough for me to understand and apply
  * advanced lambda techniques.
  * */
 
@@ -19,7 +21,8 @@ template<typename T, typename ...Ts>
 auto concat(T t, Ts ...ts)
 {
     // Check if there are any more lambdas left
-    if constexpr(sizeof...(ts) > 0)
+    // Won't compile without constexpr
+    if constexpr (sizeof...(ts) > 0)
     {
         // what is retured should be a lambda function as well
         return [=](auto ...params)
@@ -46,5 +49,30 @@ struct Visitor : B...
     using B::operator()...;
 };
 
+// Task 4, design a filter with lambda
+template<typename F, typename ...X>
+auto filter(F filt, X ...x)
+{
+    return [=](auto param)
+           {
+               return filt(x(param)...);
+           };
+}
+
+// Task 5, multiple functions operating with the same input
+static auto multicalls (auto ...functions)
+{
+    return [=](auto param)
+           {
+               // Here is a coding trick, initializer_list is used to expand ...
+               // The trick makes use of comma operator.
+               (void)std::initializer_list<int>{((void)functions(param), 0)...};
+           };
+}
+
+static auto forEach(auto functs, auto ...params)
+{
+    (void)std::initializer_list<int>{((void)functs(params), 0)...};
+}
 
 #endif
