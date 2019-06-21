@@ -51,4 +51,19 @@ int main()
                                                  createCallback(eDRAM)};
     // Looks like lambda is lvalue (object that occupies memory).
     for (auto &&callback : callbacks) { callback(); }
+
+    /*
+     * (2) concat functions, f(g(h(...)))
+     * */
+    auto timesFour([](int n){return n * 4;});
+    auto timesFive([](int n){return n * 5;});
+    auto addMe([](int a, int b){return a + b;});
+
+    // Man! This is F**ing cool.
+    auto combined(concat(timesFour, timesFive, addMe));
+    std::cout << "(1 + 1) * 4 * 5 = " << combined(1,1) << "\n";
+
+    /*
+     * (3) 
+     * */
 }
