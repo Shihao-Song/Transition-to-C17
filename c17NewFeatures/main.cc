@@ -1,9 +1,8 @@
 #include "cache.hh"
+#include "lambdas.hh"
 
 #include <functional>
 #include <vector>
-
-static auto createCallback(auto &mem){return [&](){mem.callme();};}
 
 int main()
 {
