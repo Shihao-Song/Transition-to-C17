@@ -34,6 +34,17 @@ auto concat(T t, Ts ...ts)
 }
 
 // Task 3, inherit from lambdas
+// We can inherit multiple lambdas by packing parameters
+template<typename ...B>
+struct Visitor : B...
+{
+    Visitor(B ...l) : B(l)...
+    {
+    }
+
+    // This is important
+    using B::operator()...;
+};
 
 
 #endif

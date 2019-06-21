@@ -55,6 +55,7 @@ int main()
     /*
      * (2) concat functions, f(g(h(...)))
      * */
+    std::cout << "\n";
     auto timesFour([](int n){return n * 4;});
     auto timesFive([](int n){return n * 5;});
     auto addMe([](int a, int b){return a + b;});
@@ -64,6 +65,16 @@ int main()
     std::cout << "(1 + 1) * 4 * 5 = " << combined(1,1) << "\n";
 
     /*
-     * (3) 
+     * (3) Inherit from lambdas 
+     * */
+    std::cout << "\n";
+    auto oneParam([](int n){return n + 1;});
+    auto twoParams([](int a, int b){return a + b;});
+    auto test(Visitor(oneParam, twoParams));
+    std::cout << test(2) << "\n";
+    std::cout << test(2,2) << "\n";
+
+    /*
+     * (4)
      * */
 }
