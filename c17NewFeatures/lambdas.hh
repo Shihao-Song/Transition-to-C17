@@ -1,6 +1,8 @@
 #ifndef __LD_HH__
 #define __LD_HH__
 
+//#include <algorithm>
+#include <numeric>
 #include <string>
 
 /*
@@ -75,7 +77,34 @@ static auto forEach(auto functs, auto ...params)
     (void)std::initializer_list<int>{((void)functs(params), 0)...};
 }
 
-// Task 6, design a transform_if with lambdas
+// Task 6, design a transform_if with lambdas, and accumalte
+auto Opr(auto trans)
+{
+    return [=](auto iter, auto val)
+           {
+               *iter = trans(val);
+               return ++iter;
+           };
+}
+
+auto Filter(auto filt)
+{
+    return [=](auto opr)
+           {
+               return [=](auto iter, auto val)
+               {
+                   if (filt(val))
+                   {
+                       return opr(iter, val);
+                   }
+                   else
+                   {
+                       return iter;
+                   }
+               };
+           };
+}
+
 
 
 #endif

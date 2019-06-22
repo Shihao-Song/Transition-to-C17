@@ -7,7 +7,6 @@
 int main()
 {
     // Structured bindings can help with the cache-line information extraction
-    // Cache<OnChipToOffChip> cache;
     NLC cache;
     LLC eDRAM;
 
@@ -50,7 +49,7 @@ int main()
      * */
     std::vector<std::function<void()>> callbacks{createCallback(cache),
                                                  createCallback(eDRAM)};
-    // Looks like lambda is lvalue (object that occupies memory).
+ 
     for (auto &&callback : callbacks) { callback(); }
 
     /*
@@ -86,8 +85,9 @@ int main()
     std::cout << "Does \"acb\" begin with a and end with b? " << f("acb") << "\n";
 
     /*
-     * (5) pack expansion (A programming trick)
-     * Hints: comma operator
+     * (5) Multiple functions operating on a single input
+     * Tech 1) pack expansion (A programming trick)
+     *      Hints: comma operator
      * */
     std::cout << "\n";
     // auto f1([](){std::cout << "f1 was evaluated.\n";});
@@ -98,4 +98,27 @@ int main()
     auto f2([](int n){std::cout << "Plus one is: " << n + 1 << "\n";});
     auto calls(multicalls(f1,f2));
     forEach(calls, 1, 2, 3, 4);
+
+    /*
+     * (6) design a trasform_if with lambda
+     *  Tech: std::accumulate 
+     * */
+    std::cout << "\n";
+    // if input is an even integer
+    auto even([](int i){return i % 2 == 0;});
+    // then double it
+    auto twice([](int i){return i * 2;});
+
+    std::vector<int> inputs{1,2,3,4,5};
+    std::vector<int> out{1,2,3,4,5};
+
+    std::accumulate(inputs.begin(),inputs.end(),out.begin(),
+                    Filter(even)(
+                                 Opr(twice)));
+    std::cout << out[0] << "\n";
+    std::cout << out[1] << "\n";
+
+    /*
+     * (7) 
+     * */
 }
