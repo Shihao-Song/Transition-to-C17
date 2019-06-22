@@ -75,4 +75,7 @@ static auto forEach(auto functs, auto ...params)
     (void)std::initializer_list<int>{((void)functs(params), 0)...};
 }
 
+// Task 6, design a transform_if with lambdas
+
+
 #endif
