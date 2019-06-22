@@ -6,7 +6,12 @@
 
 int main()
 {
-    // Structured bindings can help with the cache-line information extraction
+    /*
+     * Possible optimizations to CacheSim.
+     * (1) structural bindings
+     * (2) constexpr-if statement
+     * (3) use lambdas to handle callbacks
+     * */
     NLC cache;
     LLC eDRAM;
 
@@ -24,24 +29,6 @@ int main()
         std::cout << "Block " << addr << " not found.\n";
     }
     std::cout << "\n";
-
-    // **************************************************
-    // Play with lambda
-    std::cout << "1 + 1 = "
-              << [](auto i, auto j){ return i + j; }(1,1)
-              << "\n";
-
-    int count = 0;
-    auto counter([&count]() {return ++count;});
-    /*
-    counter();
-    counter();
-    counter();
-    std::cout << count << "\n";
-    */
-    auto countNTimes([=](int n){for (int i = 0; i < n; i++){ counter(); }});
-    countNTimes(10);
-    std::cout << "Count 10 times: " << count << "\n";
 
     /*
      * Possible use of lambdas.

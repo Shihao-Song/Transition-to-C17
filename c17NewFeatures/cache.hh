@@ -12,6 +12,7 @@ struct CacheLine
     unsigned when_ready;
 };
 
+// This is used for structure binding
 struct CacheLineInfoQuery
 {
     bool found;
@@ -24,18 +25,19 @@ struct CacheLineInfoQuery
     unsigned when_ready;
 };
 
-// These two structs help us to determine when to tick next level 
-struct OnChipToOffChip{};
-struct OnChipToOnChip{};
-
-// ClockedObject helps to chain all levels of cache
+// ClockedObject helps to chain all levels of memory.
 class ClockedObject
 {
   public:
     ClockedObject(){}
 
     virtual void tick() = 0;
+    // TODO, send() should also be required
 };
+
+// These two structs help us to determine when to tick next level 
+struct OnChipToOffChip{};
+struct OnChipToOnChip{};
 
 template<typename pos>
 class Cache : public ClockedObject
@@ -47,10 +49,15 @@ class Cache : public ClockedObject
         if (auto [itr, success] = cache.insert({0, {"LOAD", 1, 10}});
             success == false)
         {
-            throw std::runtime_error("Already exists.");
-        }
+            // TODO, I don't think I use cout/cerr appropriately, need to 
+            // dig into it as well. Solved!
+            // throw std::runtime_error("Already exists.");
+            std::cerr << "Already exists.\n";
+	}
 
-        // Determine when to tick next level 
+        // Determine when to tick next level
+        // TODO, should use constexpr for everything that can be determined at
+        // compile-time.
         if constexpr(std::is_same<OnChipToOffChip,pos>::value)
         {
             std::cout << "This is the last level cache. \n";
