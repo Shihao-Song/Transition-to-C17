@@ -2,6 +2,7 @@
 #define __LD_HH__
 
 //#include <algorithm>
+#include <iostream>
 #include <numeric>
 #include <string>
 
@@ -105,6 +106,10 @@ auto Filter(auto filt)
            };
 }
 
-
+// Task 7, print out cartesian coordinates
+static void printCoor(int x, int y)
+{
+    std::cout << "(" << x << ", " << y << ")\n";
+}
 
 #endif

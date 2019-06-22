@@ -119,6 +119,22 @@ int main()
     std::cout << out[1] << "\n";
 
     /*
-     * (7) 
+     * (7) print out cartesian coordinates 
      * */
+    std::cout << "\n";
+    constexpr auto call_cart(
+    [=](auto x, auto ...y) constexpr{
+        (void)std::initializer_list<int>{
+            (printCoor(x,y),0)...
+        };
+    });
+
+    constexpr auto Cartesian(
+    [=](auto ...xs) constexpr{
+        (void)std::initializer_list<int>{
+            (call_cart(xs, xs...),0)...
+        };
+    });
+
+    Cartesian(1,2,3);
 }
