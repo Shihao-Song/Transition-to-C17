@@ -1,8 +1,6 @@
 #include "cache.hh"
 #include "lambdas.hh"
-
-#include <functional>
-#include <vector>
+#include "stl_container.hh"
 
 int main()
 {
@@ -124,4 +122,9 @@ int main()
     });
 
     Cartesian(1,2,3);
+
+    /*
+     * Research on STL container
+     * */
+    STLContainer();
 }

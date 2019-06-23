@@ -2,6 +2,7 @@
 #define __LD_HH__
 
 //#include <algorithm>
+#include <functional>
 #include <iostream>
 #include <numeric>
 #include <string>
