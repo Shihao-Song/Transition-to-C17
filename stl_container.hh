@@ -23,6 +23,34 @@ auto O_1_remove_at(auto &vec, T idx)
     }
 }
 
+// Custom hashings
+struct CacheBlock
+{
+    unsigned core_id;
+    unsigned addr;
+
+    bool operator==(const CacheBlock &other) const
+    {
+        return core_id == other.core_id && addr == other.addr;
+    }
+};
+
+namespace std
+{
+template<>
+struct hash<CacheBlock>
+{
+    using argument_type = CacheBlock;
+    using result_type = size_t;
+
+    result_type operator()(const argument_type &c) const
+    {
+        return static_cast<result_type>(c.core_id) ^
+               static_cast<result_type>(c.addr);
+    }
+};
+}
+
 void STLContainer()
 {
     /*
@@ -144,6 +172,32 @@ void STLContainer()
     for (const auto &[key,value] : m)
     {
         std::cout << key << " : " << value << "\n";
+    }
+
+    std::cout << "Modifying keys, step one: \n";
+    auto n(m.extract("a"));
+    n.key() = "aa";
+    for (const auto &[key,value] : m)
+    {
+        std::cout << key << " : " << value << "\n";
+    }
+
+    std::cout << "Modifying keys, step two: \n";
+    m.insert(std::move(n));
+    for (const auto &[key,value] : m)
+    {
+        std::cout << key << " : " << value << "\n";
+    }
+
+    /*
+     * Research on unordered_map
+     * */
+    std::cout << "\n";
+    std::unordered_map<CacheBlock, bool> c{{{0, 128}, true}, {{2, 128}, true},
+                                          {{0, 256}, false}};
+    for (const auto &[block,hit] : c)
+    {
+        std::cout << "{" << block.core_id << ", " << block.addr << "}: " << hit << "\n";
     }
 }
 
