@@ -25,4 +25,4 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
 
 + Request class:
     + Issue (1): I put the definition of Request class into PCMSim, the directory where all the PCM controller implementations locate. This is a bad organization since the Request class, as a memory request abstraction, is used by Processor and cache as well.
-    + Solution (1): [ ] To create a new directory called Sim, this directory will be used to contain all the classes/functions related to simulation.
+    + [ ] Solution (1): To create a new directory called Sim, this directory will be used to contain all the classes/functions related to simulation.
