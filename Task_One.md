@@ -30,3 +30,6 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
 + PCMSimMemorySystem class:
     + Issue (1): The purpose of this class is to simply group number of memory controllers; however, the existing implementation is not flexible since we may have different types of memory controller.
     + [x] Solution (1): Make the class as a template and use Factory technique (one of the most important Design Patterns) to construct different memory systems with different types of memory controllers.
+
++ SampleController class:
+    + [x] Fixed: Added the C++17 constexpr-if feature, so that the scheduling scheme can be determined in compile-time.
