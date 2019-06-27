@@ -19,9 +19,9 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
 ```
 
 + #include formatting solution:
-    + [ ] Create a root directory, call it **include**
+    + [x] Create a root directory, call it **include**
     + [ ] Organize and put all the header files there
-    + [ ] Modify Makefile
+    + [x] Modify Makefile
 
 + Request class:
     + Issue (1): I put the definition of Request class into PCMSim, the directory where all the PCM controller implementations locate. This is a bad organization since the Request class, as a memory request abstraction, is used by Processor and cache as well.
