@@ -35,10 +35,13 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
     + [x] Fixed: Added the C++17 constexpr-if feature, so that the scheduling scheme can be determined in compile-time.
 
 + Cache class:
-    + [x] Use lambda functions as callbacks to improve performance;
+    + [x] Use lambda functions as callbacks to improve performance.
     + [x] Use constexpr-if expressions to determine Read-Only/Write-Only/Normal cache at compile time.
     + [x] Use Factory technique to create different types of cache.
 
 + Processor class:
     + [x] Connect all the components and test the entire system.
 
++ Traces:
+    + Issue: the traces that're fed into our simulator is too storage intensive.
+    + [ ] Solution: Use Google Protocol Buffer.
