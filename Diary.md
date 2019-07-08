@@ -20,7 +20,7 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
 
 + #include formatting solution:
     + [x] Create a root directory, call it **include**
-    + [ ] Organize and put all the header files there
+    + [x] Organize and put all the header files there
     + [x] Modify Makefile
 
 + Request class:
