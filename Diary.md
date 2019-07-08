@@ -43,5 +43,5 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
     + [x] Connect all the components and test the entire system.
 
 + Traces:
-    + Issue: the traces that're fed into our simulator is too storage intensive.
+    + Issue: The traces that're fed into our simulator are too storage intensive.
     + [ ] Solution: Use Google Protocol Buffer.
