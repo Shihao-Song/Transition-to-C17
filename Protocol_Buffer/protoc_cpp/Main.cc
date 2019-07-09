@@ -21,8 +21,23 @@ void generate(int argc, char *argv[])
 
     addMicroOp(file.add_micro_ops());
 
-    std::ofstream output(argv[1]);
-    if (!file.SerializeToOstream(&output))
+    std::ofstream output_1(argv[1]);
+    if (!file.SerializeToOstream(&output_1))
+    {
+        std::cerr << "Failed to generate trace file. \n";
+        exit(0);
+    }
+
+    /* Second output */
+    file.clear_micro_ops();
+    file.set_start(101);
+    file.set_end(102);
+    file.set_num_micro_ops(1);
+
+    addMicroOp(file.add_micro_ops());
+
+    std::ofstream output_2(argv[2]);
+    if (!file.SerializeToOstream(&output_2))
     {
         std::cerr << "Failed to generate trace file. \n";
         exit(0);
