@@ -2,7 +2,20 @@ syntax = "proto3";
 
 package CPUTrace;
 
-message Instruction
+message TraceFile
+{
+    // Trace is collected from start(th) instruction
+    uint64 start = 1;
+    // to end(th) instruction
+    uint64 end = 2;
+    // Total number of micro-ops
+    uint64 num_micro_ops = 3;
+
+    // Array of micro-ops collected
+    repeated MicroOp micro_ops = 4;
+}
+
+message MicroOp
 {
     uint64 eip = 1;
 

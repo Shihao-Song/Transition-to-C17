@@ -15,78 +15,113 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_cpu_5ftrace_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MicroOp_cpu_5ftrace_2eproto;
 namespace CPUTrace {
-class InstructionDefaultTypeInternal {
+class TraceFileDefaultTypeInternal {
  public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Instruction> _instance;
-} _Instruction_default_instance_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<TraceFile> _instance;
+} _TraceFile_default_instance_;
+class MicroOpDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MicroOp> _instance;
+} _MicroOp_default_instance_;
 }  // namespace CPUTrace
-static void InitDefaultsscc_info_Instruction_cpu_5ftrace_2eproto() {
+static void InitDefaultsscc_info_MicroOp_cpu_5ftrace_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::CPUTrace::_Instruction_default_instance_;
-    new (ptr) ::CPUTrace::Instruction();
+    void* ptr = &::CPUTrace::_MicroOp_default_instance_;
+    new (ptr) ::CPUTrace::MicroOp();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::CPUTrace::Instruction::InitAsDefaultInstance();
+  ::CPUTrace::MicroOp::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Instruction_cpu_5ftrace_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Instruction_cpu_5ftrace_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MicroOp_cpu_5ftrace_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_MicroOp_cpu_5ftrace_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_cpu_5ftrace_2eproto[1];
+static void InitDefaultsscc_info_TraceFile_cpu_5ftrace_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::CPUTrace::_TraceFile_default_instance_;
+    new (ptr) ::CPUTrace::TraceFile();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::CPUTrace::TraceFile::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TraceFile_cpu_5ftrace_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_TraceFile_cpu_5ftrace_2eproto}, {
+      &scc_info_MicroOp_cpu_5ftrace_2eproto.base,}};
+
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_cpu_5ftrace_2eproto[2];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_cpu_5ftrace_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_cpu_5ftrace_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_cpu_5ftrace_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::CPUTrace::Instruction, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::TraceFile, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::CPUTrace::Instruction, eip_),
-  PROTOBUF_FIELD_OFFSET(::CPUTrace::Instruction, opr_),
-  PROTOBUF_FIELD_OFFSET(::CPUTrace::Instruction, load_or_store_addr_),
-  PROTOBUF_FIELD_OFFSET(::CPUTrace::Instruction, size_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::TraceFile, start_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::TraceFile, end_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::TraceFile, num_micro_ops_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::TraceFile, micro_ops_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::MicroOp, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::MicroOp, eip_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::MicroOp, opr_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::MicroOp, load_or_store_addr_),
+  PROTOBUF_FIELD_OFFSET(::CPUTrace::MicroOp, size_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::CPUTrace::Instruction)},
+  { 0, -1, sizeof(::CPUTrace::TraceFile)},
+  { 9, -1, sizeof(::CPUTrace::MicroOp)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::CPUTrace::_Instruction_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::CPUTrace::_TraceFile_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::CPUTrace::_MicroOp_default_instance_),
 };
 
 const char descriptor_table_protodef_cpu_5ftrace_2eproto[] =
-  "\n\017cpu_trace.proto\022\010CPUTrace\"\235\001\n\013Instruct"
-  "ion\022\013\n\003eip\030\001 \001(\004\022,\n\003opr\030\002 \001(\0162\037.CPUTrace"
-  ".Instruction.Operation\022\032\n\022load_or_store_"
-  "addr\030\003 \001(\004\022\014\n\004size\030\004 \001(\004\")\n\tOperation\022\007\n"
-  "\003EXE\020\000\022\010\n\004LOAD\020\001\022\t\n\005STORE\020\002b\006proto3"
+  "\n\017cpu_trace.proto\022\010CPUTrace\"d\n\tTraceFile"
+  "\022\r\n\005start\030\001 \001(\004\022\013\n\003end\030\002 \001(\004\022\025\n\rnum_micr"
+  "o_ops\030\003 \001(\004\022$\n\tmicro_ops\030\004 \003(\0132\021.CPUTrac"
+  "e.MicroOp\"\225\001\n\007MicroOp\022\013\n\003eip\030\001 \001(\004\022(\n\003op"
+  "r\030\002 \001(\0162\033.CPUTrace.MicroOp.Operation\022\032\n\022"
+  "load_or_store_addr\030\003 \001(\004\022\014\n\004size\030\004 \001(\004\")"
+  "\n\tOperation\022\007\n\003EXE\020\000\022\010\n\004LOAD\020\001\022\t\n\005STORE\020"
+  "\002b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_cpu_5ftrace_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cpu_5ftrace_2eproto_sccs[1] = {
-  &scc_info_Instruction_cpu_5ftrace_2eproto.base,
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_cpu_5ftrace_2eproto_sccs[2] = {
+  &scc_info_MicroOp_cpu_5ftrace_2eproto.base,
+  &scc_info_TraceFile_cpu_5ftrace_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_cpu_5ftrace_2eproto_once;
 static bool descriptor_table_cpu_5ftrace_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_cpu_5ftrace_2eproto = {
-  &descriptor_table_cpu_5ftrace_2eproto_initialized, descriptor_table_protodef_cpu_5ftrace_2eproto, "cpu_trace.proto", 195,
-  &descriptor_table_cpu_5ftrace_2eproto_once, descriptor_table_cpu_5ftrace_2eproto_sccs, descriptor_table_cpu_5ftrace_2eproto_deps, 1, 0,
+  &descriptor_table_cpu_5ftrace_2eproto_initialized, descriptor_table_protodef_cpu_5ftrace_2eproto, "cpu_trace.proto", 289,
+  &descriptor_table_cpu_5ftrace_2eproto_once, descriptor_table_cpu_5ftrace_2eproto_sccs, descriptor_table_cpu_5ftrace_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_cpu_5ftrace_2eproto::offsets,
-  file_level_metadata_cpu_5ftrace_2eproto, 1, file_level_enum_descriptors_cpu_5ftrace_2eproto, file_level_service_descriptors_cpu_5ftrace_2eproto,
+  file_level_metadata_cpu_5ftrace_2eproto, 2, file_level_enum_descriptors_cpu_5ftrace_2eproto, file_level_service_descriptors_cpu_5ftrace_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_cpu_5ftrace_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_cpu_5ftrace_2eproto), true);
 namespace CPUTrace {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Instruction_Operation_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MicroOp_Operation_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_cpu_5ftrace_2eproto);
   return file_level_enum_descriptors_cpu_5ftrace_2eproto[0];
 }
-bool Instruction_Operation_IsValid(int value) {
+bool MicroOp_Operation_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -98,69 +133,473 @@ bool Instruction_Operation_IsValid(int value) {
 }
 
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-constexpr Instruction_Operation Instruction::EXE;
-constexpr Instruction_Operation Instruction::LOAD;
-constexpr Instruction_Operation Instruction::STORE;
-constexpr Instruction_Operation Instruction::Operation_MIN;
-constexpr Instruction_Operation Instruction::Operation_MAX;
-constexpr int Instruction::Operation_ARRAYSIZE;
+constexpr MicroOp_Operation MicroOp::EXE;
+constexpr MicroOp_Operation MicroOp::LOAD;
+constexpr MicroOp_Operation MicroOp::STORE;
+constexpr MicroOp_Operation MicroOp::Operation_MIN;
+constexpr MicroOp_Operation MicroOp::Operation_MAX;
+constexpr int MicroOp::Operation_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 
 // ===================================================================
 
-void Instruction::InitAsDefaultInstance() {
+void TraceFile::InitAsDefaultInstance() {
 }
-class Instruction::HasBitSetters {
+class TraceFile::HasBitSetters {
  public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Instruction::kEipFieldNumber;
-const int Instruction::kOprFieldNumber;
-const int Instruction::kLoadOrStoreAddrFieldNumber;
-const int Instruction::kSizeFieldNumber;
+const int TraceFile::kStartFieldNumber;
+const int TraceFile::kEndFieldNumber;
+const int TraceFile::kNumMicroOpsFieldNumber;
+const int TraceFile::kMicroOpsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Instruction::Instruction()
+TraceFile::TraceFile()
   : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:CPUTrace.Instruction)
+  // @@protoc_insertion_point(constructor:CPUTrace.TraceFile)
 }
-Instruction::Instruction(const Instruction& from)
+TraceFile::TraceFile(const TraceFile& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      micro_ops_(from.micro_ops_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&start_, &from.start_,
+    static_cast<size_t>(reinterpret_cast<char*>(&num_micro_ops_) -
+    reinterpret_cast<char*>(&start_)) + sizeof(num_micro_ops_));
+  // @@protoc_insertion_point(copy_constructor:CPUTrace.TraceFile)
+}
+
+void TraceFile::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_TraceFile_cpu_5ftrace_2eproto.base);
+  ::memset(&start_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&num_micro_ops_) -
+      reinterpret_cast<char*>(&start_)) + sizeof(num_micro_ops_));
+}
+
+TraceFile::~TraceFile() {
+  // @@protoc_insertion_point(destructor:CPUTrace.TraceFile)
+  SharedDtor();
+}
+
+void TraceFile::SharedDtor() {
+}
+
+void TraceFile::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const TraceFile& TraceFile::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_TraceFile_cpu_5ftrace_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void TraceFile::Clear() {
+// @@protoc_insertion_point(message_clear_start:CPUTrace.TraceFile)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  micro_ops_.Clear();
+  ::memset(&start_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&num_micro_ops_) -
+      reinterpret_cast<char*>(&start_)) + sizeof(num_micro_ops_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* TraceFile::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 start = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          start_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 end = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          end_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 num_micro_ops = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          num_micro_ops_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .CPUTrace.MicroOp micro_ops = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(add_micro_ops(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 34);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool TraceFile::MergePartialFromCodedStream(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+  // @@protoc_insertion_point(parse_start:CPUTrace.TraceFile)
+  for (;;) {
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // uint64 start = 1;
+      case 1: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &start_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint64 end = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &end_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // uint64 num_micro_ops = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &num_micro_ops_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .CPUTrace.MicroOp micro_ops = 4;
+      case 4: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+                input, add_micro_ops()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:CPUTrace.TraceFile)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:CPUTrace.TraceFile)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void TraceFile::SerializeWithCachedSizes(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:CPUTrace.TraceFile)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 start = 1;
+  if (this->start() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(1, this->start(), output);
+  }
+
+  // uint64 end = 2;
+  if (this->end() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(2, this->end(), output);
+  }
+
+  // uint64 num_micro_ops = 3;
+  if (this->num_micro_ops() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(3, this->num_micro_ops(), output);
+  }
+
+  // repeated .CPUTrace.MicroOp micro_ops = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->micro_ops_size()); i < n; i++) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4,
+      this->micro_ops(static_cast<int>(i)),
+      output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:CPUTrace.TraceFile)
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* TraceFile::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CPUTrace.TraceFile)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 start = 1;
+  if (this->start() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->start(), target);
+  }
+
+  // uint64 end = 2;
+  if (this->end() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->end(), target);
+  }
+
+  // uint64 num_micro_ops = 3;
+  if (this->num_micro_ops() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->num_micro_ops(), target);
+  }
+
+  // repeated .CPUTrace.MicroOp micro_ops = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->micro_ops_size()); i < n; i++) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->micro_ops(static_cast<int>(i)), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CPUTrace.TraceFile)
+  return target;
+}
+
+size_t TraceFile::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CPUTrace.TraceFile)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .CPUTrace.MicroOp micro_ops = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->micro_ops_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          this->micro_ops(static_cast<int>(i)));
+    }
+  }
+
+  // uint64 start = 1;
+  if (this->start() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->start());
+  }
+
+  // uint64 end = 2;
+  if (this->end() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->end());
+  }
+
+  // uint64 num_micro_ops = 3;
+  if (this->num_micro_ops() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->num_micro_ops());
+  }
+
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void TraceFile::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CPUTrace.TraceFile)
+  GOOGLE_DCHECK_NE(&from, this);
+  const TraceFile* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TraceFile>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CPUTrace.TraceFile)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CPUTrace.TraceFile)
+    MergeFrom(*source);
+  }
+}
+
+void TraceFile::MergeFrom(const TraceFile& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CPUTrace.TraceFile)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  micro_ops_.MergeFrom(from.micro_ops_);
+  if (from.start() != 0) {
+    set_start(from.start());
+  }
+  if (from.end() != 0) {
+    set_end(from.end());
+  }
+  if (from.num_micro_ops() != 0) {
+    set_num_micro_ops(from.num_micro_ops());
+  }
+}
+
+void TraceFile::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CPUTrace.TraceFile)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TraceFile::CopyFrom(const TraceFile& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CPUTrace.TraceFile)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TraceFile::IsInitialized() const {
+  return true;
+}
+
+void TraceFile::Swap(TraceFile* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void TraceFile::InternalSwap(TraceFile* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&micro_ops_)->InternalSwap(CastToBase(&other->micro_ops_));
+  swap(start_, other->start_);
+  swap(end_, other->end_);
+  swap(num_micro_ops_, other->num_micro_ops_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TraceFile::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void MicroOp::InitAsDefaultInstance() {
+}
+class MicroOp::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int MicroOp::kEipFieldNumber;
+const int MicroOp::kOprFieldNumber;
+const int MicroOp::kLoadOrStoreAddrFieldNumber;
+const int MicroOp::kSizeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+MicroOp::MicroOp()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:CPUTrace.MicroOp)
+}
+MicroOp::MicroOp(const MicroOp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&eip_, &from.eip_,
     static_cast<size_t>(reinterpret_cast<char*>(&opr_) -
     reinterpret_cast<char*>(&eip_)) + sizeof(opr_));
-  // @@protoc_insertion_point(copy_constructor:CPUTrace.Instruction)
+  // @@protoc_insertion_point(copy_constructor:CPUTrace.MicroOp)
 }
 
-void Instruction::SharedCtor() {
+void MicroOp::SharedCtor() {
   ::memset(&eip_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&opr_) -
       reinterpret_cast<char*>(&eip_)) + sizeof(opr_));
 }
 
-Instruction::~Instruction() {
-  // @@protoc_insertion_point(destructor:CPUTrace.Instruction)
+MicroOp::~MicroOp() {
+  // @@protoc_insertion_point(destructor:CPUTrace.MicroOp)
   SharedDtor();
 }
 
-void Instruction::SharedDtor() {
+void MicroOp::SharedDtor() {
 }
 
-void Instruction::SetCachedSize(int size) const {
+void MicroOp::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const Instruction& Instruction::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Instruction_cpu_5ftrace_2eproto.base);
+const MicroOp& MicroOp::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MicroOp_cpu_5ftrace_2eproto.base);
   return *internal_default_instance();
 }
 
 
-void Instruction::Clear() {
-// @@protoc_insertion_point(message_clear_start:CPUTrace.Instruction)
+void MicroOp::Clear() {
+// @@protoc_insertion_point(message_clear_start:CPUTrace.MicroOp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -172,7 +611,7 @@ void Instruction::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Instruction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* MicroOp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -186,12 +625,12 @@ const char* Instruction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .CPUTrace.Instruction.Operation opr = 2;
+      // .CPUTrace.MicroOp.Operation opr = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
-          set_opr(static_cast<::CPUTrace::Instruction_Operation>(val));
+          set_opr(static_cast<::CPUTrace::MicroOp_Operation>(val));
         } else goto handle_unusual;
         continue;
       // uint64 load_or_store_addr = 3;
@@ -228,11 +667,11 @@ failure:
 #undef CHK_
 }
 #else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-bool Instruction::MergePartialFromCodedStream(
+bool MicroOp::MergePartialFromCodedStream(
     ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-  // @@protoc_insertion_point(parse_start:CPUTrace.Instruction)
+  // @@protoc_insertion_point(parse_start:CPUTrace.MicroOp)
   for (;;) {
     ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -251,14 +690,14 @@ bool Instruction::MergePartialFromCodedStream(
         break;
       }
 
-      // .CPUTrace.Instruction.Operation opr = 2;
+      // .CPUTrace.MicroOp.Operation opr = 2;
       case 2: {
         if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
           int value = 0;
           DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
                    int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
                  input, &value)));
-          set_opr(static_cast< ::CPUTrace::Instruction_Operation >(value));
+          set_opr(static_cast< ::CPUTrace::MicroOp_Operation >(value));
         } else {
           goto handle_unusual;
         }
@@ -303,18 +742,18 @@ bool Instruction::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:CPUTrace.Instruction)
+  // @@protoc_insertion_point(parse_success:CPUTrace.MicroOp)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:CPUTrace.Instruction)
+  // @@protoc_insertion_point(parse_failure:CPUTrace.MicroOp)
   return false;
 #undef DO_
 }
 #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
-void Instruction::SerializeWithCachedSizes(
+void MicroOp::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:CPUTrace.Instruction)
+  // @@protoc_insertion_point(serialize_start:CPUTrace.MicroOp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -323,7 +762,7 @@ void Instruction::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64(1, this->eip(), output);
   }
 
-  // .CPUTrace.Instruction.Operation opr = 2;
+  // .CPUTrace.MicroOp.Operation opr = 2;
   if (this->opr() != 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
       2, this->opr(), output);
@@ -343,12 +782,12 @@ void Instruction::SerializeWithCachedSizes(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:CPUTrace.Instruction)
+  // @@protoc_insertion_point(serialize_end:CPUTrace.MicroOp)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Instruction::InternalSerializeWithCachedSizesToArray(
+::PROTOBUF_NAMESPACE_ID::uint8* MicroOp::InternalSerializeWithCachedSizesToArray(
     ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CPUTrace.Instruction)
+  // @@protoc_insertion_point(serialize_to_array_start:CPUTrace.MicroOp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -357,7 +796,7 @@ void Instruction::SerializeWithCachedSizes(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->eip(), target);
   }
 
-  // .CPUTrace.Instruction.Operation opr = 2;
+  // .CPUTrace.MicroOp.Operation opr = 2;
   if (this->opr() != 0) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
       2, this->opr(), target);
@@ -377,12 +816,12 @@ void Instruction::SerializeWithCachedSizes(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:CPUTrace.Instruction)
+  // @@protoc_insertion_point(serialize_to_array_end:CPUTrace.MicroOp)
   return target;
 }
 
-size_t Instruction::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:CPUTrace.Instruction)
+size_t MicroOp::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CPUTrace.MicroOp)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -415,7 +854,7 @@ size_t Instruction::ByteSizeLong() const {
         this->size());
   }
 
-  // .CPUTrace.Instruction.Operation opr = 2;
+  // .CPUTrace.MicroOp.Operation opr = 2;
   if (this->opr() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->opr());
@@ -426,23 +865,23 @@ size_t Instruction::ByteSizeLong() const {
   return total_size;
 }
 
-void Instruction::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:CPUTrace.Instruction)
+void MicroOp::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:CPUTrace.MicroOp)
   GOOGLE_DCHECK_NE(&from, this);
-  const Instruction* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Instruction>(
+  const MicroOp* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MicroOp>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CPUTrace.Instruction)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:CPUTrace.MicroOp)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:CPUTrace.Instruction)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:CPUTrace.MicroOp)
     MergeFrom(*source);
   }
 }
 
-void Instruction::MergeFrom(const Instruction& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:CPUTrace.Instruction)
+void MicroOp::MergeFrom(const MicroOp& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:CPUTrace.MicroOp)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -462,29 +901,29 @@ void Instruction::MergeFrom(const Instruction& from) {
   }
 }
 
-void Instruction::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:CPUTrace.Instruction)
+void MicroOp::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:CPUTrace.MicroOp)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Instruction::CopyFrom(const Instruction& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:CPUTrace.Instruction)
+void MicroOp::CopyFrom(const MicroOp& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CPUTrace.MicroOp)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Instruction::IsInitialized() const {
+bool MicroOp::IsInitialized() const {
   return true;
 }
 
-void Instruction::Swap(Instruction* other) {
+void MicroOp::Swap(MicroOp* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Instruction::InternalSwap(Instruction* other) {
+void MicroOp::InternalSwap(MicroOp* other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(eip_, other->eip_);
@@ -493,7 +932,7 @@ void Instruction::InternalSwap(Instruction* other) {
   swap(opr_, other->opr_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Instruction::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata MicroOp::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -501,8 +940,11 @@ void Instruction::InternalSwap(Instruction* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace CPUTrace
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::CPUTrace::Instruction* Arena::CreateMaybeMessage< ::CPUTrace::Instruction >(Arena* arena) {
-  return Arena::CreateInternal< ::CPUTrace::Instruction >(arena);
+template<> PROTOBUF_NOINLINE ::CPUTrace::TraceFile* Arena::CreateMaybeMessage< ::CPUTrace::TraceFile >(Arena* arena) {
+  return Arena::CreateInternal< ::CPUTrace::TraceFile >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CPUTrace::MicroOp* Arena::CreateMaybeMessage< ::CPUTrace::MicroOp >(Arena* arena) {
+  return Arena::CreateInternal< ::CPUTrace::MicroOp >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

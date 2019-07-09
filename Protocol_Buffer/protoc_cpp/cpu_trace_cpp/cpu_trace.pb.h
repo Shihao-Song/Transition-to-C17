@@ -48,7 +48,7 @@ struct TableStruct_cpu_5ftrace_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,60 +56,64 @@ struct TableStruct_cpu_5ftrace_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_cpu_5ftrace_2eproto;
 namespace CPUTrace {
-class Instruction;
-class InstructionDefaultTypeInternal;
-extern InstructionDefaultTypeInternal _Instruction_default_instance_;
+class MicroOp;
+class MicroOpDefaultTypeInternal;
+extern MicroOpDefaultTypeInternal _MicroOp_default_instance_;
+class TraceFile;
+class TraceFileDefaultTypeInternal;
+extern TraceFileDefaultTypeInternal _TraceFile_default_instance_;
 }  // namespace CPUTrace
 PROTOBUF_NAMESPACE_OPEN
-template<> ::CPUTrace::Instruction* Arena::CreateMaybeMessage<::CPUTrace::Instruction>(Arena*);
+template<> ::CPUTrace::MicroOp* Arena::CreateMaybeMessage<::CPUTrace::MicroOp>(Arena*);
+template<> ::CPUTrace::TraceFile* Arena::CreateMaybeMessage<::CPUTrace::TraceFile>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace CPUTrace {
 
-enum Instruction_Operation : int {
-  Instruction_Operation_EXE = 0,
-  Instruction_Operation_LOAD = 1,
-  Instruction_Operation_STORE = 2,
-  Instruction_Operation_Instruction_Operation_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  Instruction_Operation_Instruction_Operation_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+enum MicroOp_Operation : int {
+  MicroOp_Operation_EXE = 0,
+  MicroOp_Operation_LOAD = 1,
+  MicroOp_Operation_STORE = 2,
+  MicroOp_Operation_MicroOp_Operation_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  MicroOp_Operation_MicroOp_Operation_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool Instruction_Operation_IsValid(int value);
-constexpr Instruction_Operation Instruction_Operation_Operation_MIN = Instruction_Operation_EXE;
-constexpr Instruction_Operation Instruction_Operation_Operation_MAX = Instruction_Operation_STORE;
-constexpr int Instruction_Operation_Operation_ARRAYSIZE = Instruction_Operation_Operation_MAX + 1;
+bool MicroOp_Operation_IsValid(int value);
+constexpr MicroOp_Operation MicroOp_Operation_Operation_MIN = MicroOp_Operation_EXE;
+constexpr MicroOp_Operation MicroOp_Operation_Operation_MAX = MicroOp_Operation_STORE;
+constexpr int MicroOp_Operation_Operation_ARRAYSIZE = MicroOp_Operation_Operation_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Instruction_Operation_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MicroOp_Operation_descriptor();
 template<typename T>
-inline const std::string& Instruction_Operation_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, Instruction_Operation>::value ||
+inline const std::string& MicroOp_Operation_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, MicroOp_Operation>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function Instruction_Operation_Name.");
+    "Incorrect type passed to function MicroOp_Operation_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    Instruction_Operation_descriptor(), enum_t_value);
+    MicroOp_Operation_descriptor(), enum_t_value);
 }
-inline bool Instruction_Operation_Parse(
-    const std::string& name, Instruction_Operation* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Instruction_Operation>(
-    Instruction_Operation_descriptor(), name, value);
+inline bool MicroOp_Operation_Parse(
+    const std::string& name, MicroOp_Operation* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MicroOp_Operation>(
+    MicroOp_Operation_descriptor(), name, value);
 }
 // ===================================================================
 
-class Instruction :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CPUTrace.Instruction) */ {
+class TraceFile :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CPUTrace.TraceFile) */ {
  public:
-  Instruction();
-  virtual ~Instruction();
+  TraceFile();
+  virtual ~TraceFile();
 
-  Instruction(const Instruction& from);
-  Instruction(Instruction&& from) noexcept
-    : Instruction() {
+  TraceFile(const TraceFile& from);
+  TraceFile(TraceFile&& from) noexcept
+    : TraceFile() {
     *this = ::std::move(from);
   }
 
-  inline Instruction& operator=(const Instruction& from) {
+  inline TraceFile& operator=(const TraceFile& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Instruction& operator=(Instruction&& from) noexcept {
+  inline TraceFile& operator=(TraceFile&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -127,34 +131,34 @@ class Instruction :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const Instruction& default_instance();
+  static const TraceFile& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Instruction* internal_default_instance() {
-    return reinterpret_cast<const Instruction*>(
-               &_Instruction_default_instance_);
+  static inline const TraceFile* internal_default_instance() {
+    return reinterpret_cast<const TraceFile*>(
+               &_TraceFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  void Swap(Instruction* other);
-  friend void swap(Instruction& a, Instruction& b) {
+  void Swap(TraceFile* other);
+  friend void swap(TraceFile& a, TraceFile& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Instruction* New() const final {
-    return CreateMaybeMessage<Instruction>(nullptr);
+  inline TraceFile* New() const final {
+    return CreateMaybeMessage<TraceFile>(nullptr);
   }
 
-  Instruction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<Instruction>(arena);
+  TraceFile* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<TraceFile>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const Instruction& from);
-  void MergeFrom(const Instruction& from);
+  void CopyFrom(const TraceFile& from);
+  void MergeFrom(const TraceFile& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -175,10 +179,10 @@ class Instruction :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Instruction* other);
+  void InternalSwap(TraceFile* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CPUTrace.Instruction";
+    return "CPUTrace.TraceFile";
   }
   private:
   inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
@@ -200,36 +204,189 @@ class Instruction :
 
   // nested types ----------------------------------------------------
 
-  typedef Instruction_Operation Operation;
+  // accessors -------------------------------------------------------
+
+  // repeated .CPUTrace.MicroOp micro_ops = 4;
+  int micro_ops_size() const;
+  void clear_micro_ops();
+  static const int kMicroOpsFieldNumber = 4;
+  ::CPUTrace::MicroOp* mutable_micro_ops(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CPUTrace::MicroOp >*
+      mutable_micro_ops();
+  const ::CPUTrace::MicroOp& micro_ops(int index) const;
+  ::CPUTrace::MicroOp* add_micro_ops();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CPUTrace::MicroOp >&
+      micro_ops() const;
+
+  // uint64 start = 1;
+  void clear_start();
+  static const int kStartFieldNumber = 1;
+  ::PROTOBUF_NAMESPACE_ID::uint64 start() const;
+  void set_start(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // uint64 end = 2;
+  void clear_end();
+  static const int kEndFieldNumber = 2;
+  ::PROTOBUF_NAMESPACE_ID::uint64 end() const;
+  void set_end(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // uint64 num_micro_ops = 3;
+  void clear_num_micro_ops();
+  static const int kNumMicroOpsFieldNumber = 3;
+  ::PROTOBUF_NAMESPACE_ID::uint64 num_micro_ops() const;
+  void set_num_micro_ops(::PROTOBUF_NAMESPACE_ID::uint64 value);
+
+  // @@protoc_insertion_point(class_scope:CPUTrace.TraceFile)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CPUTrace::MicroOp > micro_ops_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 start_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 end_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 num_micro_ops_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_cpu_5ftrace_2eproto;
+};
+// -------------------------------------------------------------------
+
+class MicroOp :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CPUTrace.MicroOp) */ {
+ public:
+  MicroOp();
+  virtual ~MicroOp();
+
+  MicroOp(const MicroOp& from);
+  MicroOp(MicroOp&& from) noexcept
+    : MicroOp() {
+    *this = ::std::move(from);
+  }
+
+  inline MicroOp& operator=(const MicroOp& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MicroOp& operator=(MicroOp&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const MicroOp& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MicroOp* internal_default_instance() {
+    return reinterpret_cast<const MicroOp*>(
+               &_MicroOp_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(MicroOp* other);
+  friend void swap(MicroOp& a, MicroOp& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MicroOp* New() const final {
+    return CreateMaybeMessage<MicroOp>(nullptr);
+  }
+
+  MicroOp* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MicroOp>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const MicroOp& from);
+  void MergeFrom(const MicroOp& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MicroOp* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CPUTrace.MicroOp";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_cpu_5ftrace_2eproto);
+    return ::descriptor_table_cpu_5ftrace_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef MicroOp_Operation Operation;
   static constexpr Operation EXE =
-    Instruction_Operation_EXE;
+    MicroOp_Operation_EXE;
   static constexpr Operation LOAD =
-    Instruction_Operation_LOAD;
+    MicroOp_Operation_LOAD;
   static constexpr Operation STORE =
-    Instruction_Operation_STORE;
+    MicroOp_Operation_STORE;
   static inline bool Operation_IsValid(int value) {
-    return Instruction_Operation_IsValid(value);
+    return MicroOp_Operation_IsValid(value);
   }
   static constexpr Operation Operation_MIN =
-    Instruction_Operation_Operation_MIN;
+    MicroOp_Operation_Operation_MIN;
   static constexpr Operation Operation_MAX =
-    Instruction_Operation_Operation_MAX;
+    MicroOp_Operation_Operation_MAX;
   static constexpr int Operation_ARRAYSIZE =
-    Instruction_Operation_Operation_ARRAYSIZE;
+    MicroOp_Operation_Operation_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
   Operation_descriptor() {
-    return Instruction_Operation_descriptor();
+    return MicroOp_Operation_descriptor();
   }
   template<typename T>
   static inline const std::string& Operation_Name(T enum_t_value) {
     static_assert(::std::is_same<T, Operation>::value ||
       ::std::is_integral<T>::value,
       "Incorrect type passed to function Operation_Name.");
-    return Instruction_Operation_Name(enum_t_value);
+    return MicroOp_Operation_Name(enum_t_value);
   }
   static inline bool Operation_Parse(const std::string& name,
       Operation* value) {
-    return Instruction_Operation_Parse(name, value);
+    return MicroOp_Operation_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -252,13 +409,13 @@ class Instruction :
   ::PROTOBUF_NAMESPACE_ID::uint64 size() const;
   void set_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
 
-  // .CPUTrace.Instruction.Operation opr = 2;
+  // .CPUTrace.MicroOp.Operation opr = 2;
   void clear_opr();
   static const int kOprFieldNumber = 2;
-  ::CPUTrace::Instruction_Operation opr() const;
-  void set_opr(::CPUTrace::Instruction_Operation value);
+  ::CPUTrace::MicroOp_Operation opr() const;
+  void set_opr(::CPUTrace::MicroOp_Operation value);
 
-  // @@protoc_insertion_point(class_scope:CPUTrace.Instruction)
+  // @@protoc_insertion_point(class_scope:CPUTrace.MicroOp)
  private:
   class HasBitSetters;
 
@@ -279,67 +436,145 @@ class Instruction :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Instruction
+// TraceFile
+
+// uint64 start = 1;
+inline void TraceFile::clear_start() {
+  start_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TraceFile::start() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.TraceFile.start)
+  return start_;
+}
+inline void TraceFile::set_start(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  start_ = value;
+  // @@protoc_insertion_point(field_set:CPUTrace.TraceFile.start)
+}
+
+// uint64 end = 2;
+inline void TraceFile::clear_end() {
+  end_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TraceFile::end() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.TraceFile.end)
+  return end_;
+}
+inline void TraceFile::set_end(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  end_ = value;
+  // @@protoc_insertion_point(field_set:CPUTrace.TraceFile.end)
+}
+
+// uint64 num_micro_ops = 3;
+inline void TraceFile::clear_num_micro_ops() {
+  num_micro_ops_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TraceFile::num_micro_ops() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.TraceFile.num_micro_ops)
+  return num_micro_ops_;
+}
+inline void TraceFile::set_num_micro_ops(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  num_micro_ops_ = value;
+  // @@protoc_insertion_point(field_set:CPUTrace.TraceFile.num_micro_ops)
+}
+
+// repeated .CPUTrace.MicroOp micro_ops = 4;
+inline int TraceFile::micro_ops_size() const {
+  return micro_ops_.size();
+}
+inline void TraceFile::clear_micro_ops() {
+  micro_ops_.Clear();
+}
+inline ::CPUTrace::MicroOp* TraceFile::mutable_micro_ops(int index) {
+  // @@protoc_insertion_point(field_mutable:CPUTrace.TraceFile.micro_ops)
+  return micro_ops_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CPUTrace::MicroOp >*
+TraceFile::mutable_micro_ops() {
+  // @@protoc_insertion_point(field_mutable_list:CPUTrace.TraceFile.micro_ops)
+  return &micro_ops_;
+}
+inline const ::CPUTrace::MicroOp& TraceFile::micro_ops(int index) const {
+  // @@protoc_insertion_point(field_get:CPUTrace.TraceFile.micro_ops)
+  return micro_ops_.Get(index);
+}
+inline ::CPUTrace::MicroOp* TraceFile::add_micro_ops() {
+  // @@protoc_insertion_point(field_add:CPUTrace.TraceFile.micro_ops)
+  return micro_ops_.Add();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CPUTrace::MicroOp >&
+TraceFile::micro_ops() const {
+  // @@protoc_insertion_point(field_list:CPUTrace.TraceFile.micro_ops)
+  return micro_ops_;
+}
+
+// -------------------------------------------------------------------
+
+// MicroOp
 
 // uint64 eip = 1;
-inline void Instruction::clear_eip() {
+inline void MicroOp::clear_eip() {
   eip_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instruction::eip() const {
-  // @@protoc_insertion_point(field_get:CPUTrace.Instruction.eip)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MicroOp::eip() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.MicroOp.eip)
   return eip_;
 }
-inline void Instruction::set_eip(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MicroOp::set_eip(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   eip_ = value;
-  // @@protoc_insertion_point(field_set:CPUTrace.Instruction.eip)
+  // @@protoc_insertion_point(field_set:CPUTrace.MicroOp.eip)
 }
 
-// .CPUTrace.Instruction.Operation opr = 2;
-inline void Instruction::clear_opr() {
+// .CPUTrace.MicroOp.Operation opr = 2;
+inline void MicroOp::clear_opr() {
   opr_ = 0;
 }
-inline ::CPUTrace::Instruction_Operation Instruction::opr() const {
-  // @@protoc_insertion_point(field_get:CPUTrace.Instruction.opr)
-  return static_cast< ::CPUTrace::Instruction_Operation >(opr_);
+inline ::CPUTrace::MicroOp_Operation MicroOp::opr() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.MicroOp.opr)
+  return static_cast< ::CPUTrace::MicroOp_Operation >(opr_);
 }
-inline void Instruction::set_opr(::CPUTrace::Instruction_Operation value) {
+inline void MicroOp::set_opr(::CPUTrace::MicroOp_Operation value) {
   
   opr_ = value;
-  // @@protoc_insertion_point(field_set:CPUTrace.Instruction.opr)
+  // @@protoc_insertion_point(field_set:CPUTrace.MicroOp.opr)
 }
 
 // uint64 load_or_store_addr = 3;
-inline void Instruction::clear_load_or_store_addr() {
+inline void MicroOp::clear_load_or_store_addr() {
   load_or_store_addr_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instruction::load_or_store_addr() const {
-  // @@protoc_insertion_point(field_get:CPUTrace.Instruction.load_or_store_addr)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MicroOp::load_or_store_addr() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.MicroOp.load_or_store_addr)
   return load_or_store_addr_;
 }
-inline void Instruction::set_load_or_store_addr(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MicroOp::set_load_or_store_addr(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   load_or_store_addr_ = value;
-  // @@protoc_insertion_point(field_set:CPUTrace.Instruction.load_or_store_addr)
+  // @@protoc_insertion_point(field_set:CPUTrace.MicroOp.load_or_store_addr)
 }
 
 // uint64 size = 4;
-inline void Instruction::clear_size() {
+inline void MicroOp::clear_size() {
   size_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Instruction::size() const {
-  // @@protoc_insertion_point(field_get:CPUTrace.Instruction.size)
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MicroOp::size() const {
+  // @@protoc_insertion_point(field_get:CPUTrace.MicroOp.size)
   return size_;
 }
-inline void Instruction::set_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MicroOp::set_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
   size_ = value;
-  // @@protoc_insertion_point(field_set:CPUTrace.Instruction.size)
+  // @@protoc_insertion_point(field_set:CPUTrace.MicroOp.size)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -347,10 +582,10 @@ inline void Instruction::set_size(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::CPUTrace::Instruction_Operation> : ::std::true_type {};
+template <> struct is_proto_enum< ::CPUTrace::MicroOp_Operation> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::CPUTrace::Instruction_Operation>() {
-  return ::CPUTrace::Instruction_Operation_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::CPUTrace::MicroOp_Operation>() {
+  return ::CPUTrace::MicroOp_Operation_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE
