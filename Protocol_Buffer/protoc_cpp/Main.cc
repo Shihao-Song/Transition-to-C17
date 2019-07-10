@@ -60,7 +60,9 @@ void parse(int argc, char *argv[])
     
     std::cout << "Start: " << file.start() << "\n";
     std::cout << "End: " << file.end() << "\n";
-    for (int i = 0; i < file.micro_ops_size(); i++)
+    std::cout << "Number of micro-ops: " << file.micro_ops_size() << "\n\n";
+
+    for (int i = 0; i < 10; i++)
     {
         const CPUTrace::MicroOp &micro_op = file.micro_ops(i);
         std::cout << "Micro-Op " << i << ": \n";
@@ -68,11 +70,21 @@ void parse(int argc, char *argv[])
         if (micro_op.opr() == CPUTrace::MicroOp::LOAD)
         {
             std::cout << "Operation: LOAD \n";
+            std::cout << "Load Addr: " << micro_op.load_or_store_addr() << "\n";
+            std::cout << "Data Size: " << micro_op.size() << "\n\n";
         }
-        std::cout << "Load Addr: " << micro_op.load_or_store_addr() << "\n";
-        std::cout << "Data Size: " << micro_op.size() << "\n";
+        if (micro_op.opr() == CPUTrace::MicroOp::STORE)
+        {
+            std::cout << "Operation: STORE \n";
+            std::cout << "Store Addr: " << micro_op.load_or_store_addr() << "\n";
+            std::cout << "Data Size: " << micro_op.size() << "\n\n";
+        }
+        if (micro_op.opr() == CPUTrace::MicroOp::EXE)
+        {
+            std::cout << "Operation: EXE \n\n";
+        }
     }
-
+    
     google::protobuf::ShutdownProtobufLibrary();
 }
 
