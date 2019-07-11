@@ -44,4 +44,4 @@ My ultimate goal is to make every major class (especially Cache, MMU, and Memory
 
 + Traces:
     + Issue: The traces that're fed into our simulator are too storage intensive.
-    + [ ] Solution: Use Google Protocol Buffer.
+    + [x] Solution: Use Google Protocol Buffer.
